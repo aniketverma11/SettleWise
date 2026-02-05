@@ -1,6 +1,8 @@
 django>=6.0.2
 djangorestframework
 django-cors-headers
+django-admin-interface
+django-colorfield
 python-dotenv
 pillow
 dj-database-url
