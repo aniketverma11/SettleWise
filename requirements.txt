@@ -3,3 +3,5 @@ djangorestframework
 django-cors-headers
 python-dotenv
 pillow
+dj-database-url
+ipython

@@ -60,7 +60,12 @@
    python manage.py migrate
    ```
 
-5. **Run the development server**
+5. **Configure Admin Theme**
+   ```bash
+   python scripts/configure_theme.py
+   ```
+
+6. **Run the development server**
    ```bash
    python manage.py runserver
    ```
@@ -73,6 +78,7 @@
 SettleWise/
 ├── config/             # Project settings and core configuration
 ├── apps/               # Application modules (Expenses, Users, Groups)
+├── scripts/            # Setup and utility scripts
 ├── media/              # User-uploaded files
 ├── static/             # Static assets (CSS, JS, Images)
 ├── manage.py           # Django management script
