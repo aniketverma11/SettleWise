@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SettleWise | Launching Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #002244;
+            --secondary: #10b981;
+            --accent: #059669;
+            --bg-light: #fcfdfe;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-light);
+            background-image:
+                radial-gradient(at 0% 0%, hsla(161, 74%, 90%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(210, 100%, 95%, 1) 0, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Abstract Background Elements */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+
+        .shape-1 {
+            top: 10%;
+            right: 15%;
+            width: 300px;
+            height: 300px;
+            background: #d1fae5;
+            border-radius: 50%;
+        }
+
+        .shape-2 {
+            bottom: 10%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: #e0f2fe;
+            border-radius: 50%;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 850px;
+            width: 100%;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            padding: 5rem 3rem;
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.05),
+                0 10px 10px -5px rgba(0, 0, 0, 0.02),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-container img {
+            height: 90px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            /* Filter to handle dark logo on light background if needed, 
+               but assuming original logo looks professional on white */
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ecfdf5;
+            color: var(--accent);
+            padding: 0.7rem 1.8rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.2rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 3.5rem;
+            font-weight: 400;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer {
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .footer span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        @media (max-width: 640px) {
+            .glass-card {
+                padding: 4rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            .logo-container img {
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <div class="container">
+        <div class="glass-card">
+            <div class="badge">Coming Very Soon</div>
+            <div class="logo-container">
+                <img src="{% static 'logo.png' %}" alt="SettleWise Logo">
+            </div>
+            <h1>
+                We're <span class="gradient-text">Launching Soon</span>
+            </h1>
+            <p>Master your shared finances and settle debts effortlessly. The ultimate platform for smart expense
+                tracking is almost here.</p>
+
+            <div class="footer">
+                &copy; 2026 SettleWise. Built for <span>Clarity</span>.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
